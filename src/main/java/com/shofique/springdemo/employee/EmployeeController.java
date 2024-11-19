@@ -1,9 +1,7 @@
 package com.shofique.springdemo.employee;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -12,14 +10,36 @@ import java.util.List;
 @RequestMapping("/api/v1/employees")
 public class EmployeeController {
 
-    private EmployeeService employeeService;
+    private final EmployeeService employeeService;
     @Autowired
     public EmployeeController(EmployeeService employeeService)
     {
         this.employeeService = employeeService;
     }
-@GetMapping
-    public List<Employee> findAllEmployees(){
+    @PostMapping
+    public Employee save(@RequestBody Employee employee)
+    {
+        return employeeService.save(employee);
+    }
+
+    @GetMapping("/{email}")
+    public Employee findByEmail(@PathVariable("email") String email){
+        return employeeService.findByEmail(email);
+    }
+    @GetMapping
+    public List<Employee> findAllEmployees()
+    {
         return employeeService.findAllEmployees();
+    }
+
+    @PutMapping
+    public Employee updateEmployee(@RequestBody Employee employee){
+        return  employeeService.update(employee);
+    }
+
+    @DeleteMapping("/{email}")
+    public String delete(@PathVariable("email") String email){
+        employeeService.delete(email);
+        return "Successfully deleted";
     }
 }
