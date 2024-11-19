@@ -18,13 +18,21 @@
 		<license/>
 	</licenses>
 	<developers>
-		<developer/>
+		<developer>
+			<id>johndoe</id>
+			<name>Shofique</name>
+			<email>programmingcode11@gmail.com</email>
+			<roles>
+				<role>Developer</role>
+				<role>Architect</role>
+			</roles>
+		</developer>
 	</developers>
 	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
+		<connection>scm:git:https://github.com/shofique11/spring-boot-api-crud-inmemory.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com:shofique11/spring-boot-api-crud-inmemory.git</developerConnection>
+		<tag>v1.0.0</tag>
+		<url>https://github.com/shofique11/spring-boot-api-crud-inmemory/</url>
 	</scm>
 	<properties>
 		<java.version>17</java.version>
@@ -35,11 +43,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-test</artifactId>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
 	</dependencies>
 
 	<build>
